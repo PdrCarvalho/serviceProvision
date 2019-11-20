@@ -1,6 +1,8 @@
 import Appoitment from '../model/appointment';
 import User from '../model/user';
 import Company from '../model/company';
+import Queue from '../../lib/Queue';
+import CancellationMail from '../jobs/CancellationMail';
 import * as Yup from 'yup'
 class AppointmentController {
     async Store(req, res) {
@@ -25,6 +27,22 @@ class AppointmentController {
     async FindAll(req, res){
         const appoitments  = await Appoitment.find();
         res.json(appoitments);
+    }
+    async Delete(req,res){
+        const Checkappointment = await Appoitment.findById(req.params.id)
+        if(!Checkappointment){
+            return res.status(401).json({error:"appointment not exist"})
+        }
+        const appointment = await Appoitment.findByIdAndUpdate(
+            req.params.id,
+            {canceled_at: new Date() },
+            { new: true },
+          )
+        await Queue.add(CancellationMail.Key, {
+            appointment,
+          });
+      
+          return res.json(appointment);
     }
 }
 export default new AppointmentController();
