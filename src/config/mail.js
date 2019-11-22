@@ -7,6 +7,6 @@ export default {
     pass: '7a1ca2c88f669d',
   },
   default: {
-    from: 'Equipe barberApp <noreply@barberapp.com>',
+    from: 'Service Provision <noreply@serviceProvision.com>',
   },
 };

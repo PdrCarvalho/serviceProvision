@@ -14,5 +14,7 @@ routes.post('/company',CompanyController.Store);
 routes.get('/company', CompanyController.FindAll);
 routes.post('/appointment',AppointmeentController.Store);
 routes.get('/appointment',AppointmeentController.FindAll);
+routes.get('/appointment/user/:id',AppointmeentController.FindByUser);
+routes.get('/appointment/company/:id',AppointmeentController.FindByCompany);
 routes.delete('/appointment/:id',AppointmeentController.Delete);
 export default routes;
