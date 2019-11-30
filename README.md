@@ -9,8 +9,8 @@ Utilizamos NodeJS com express para criar a API baseada no padrão REST. O MongoD
 ### User
 ```bson
 {
-    "name" : <nome do usuário> : string,
-    "email" : <email do usuário> : string,
+	"name" : <nome do usuário> : string,
+	"email" : <email do usuário> : string,
 	"password" : <senha do usuário> : string
 }
 ```
@@ -49,4 +49,22 @@ Utilizamos NodeJS com express para criar a API baseada no padrão REST. O MongoD
 * /appointment/company/{idCompany}
 	* **GET**: Retorna os agendamentos solicitados para a empresa com id passado por parâmetro.
 
+# Executando o Projeto
+#### Download das dependências
+```console
+npm install 
+```
+#### Configuração das variáveis
+**MongoDB:** Para alterar a url do MongoDB, é necessário alterar a url informada no método **mongo()** no arquivo **app.js**. <br />
+**Redis:** Para alterar a url do Redis, é necessário alterar os valores no arquivo **config/redis.js**.<br />
+**Express:** Para alterar a porta em que o express vai executar, é necessário alterar o valor no arquivo **server.js**.<br />
+**Email:** Para alterar as informações sobre o serviço de email, é necessário alterar o arquivo **config/mail.js**.<br />
 
+#### Inicializando a API
+```console
+yarn dev 
+```
+#### Inicializando a fila
+```console
+yarn queue 
+```
