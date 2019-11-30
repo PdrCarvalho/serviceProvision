@@ -8,6 +8,7 @@ import Queue from '../../lib/Queue';
 import CancellationMail from '../jobs/CancellationMail';
 import AppointmentMail from '../jobs/AppointmentMail';
 import * as Yup from 'yup'
+
 class AppointmentController {
     async Store(req, res) {
         const schema = Yup.object().shape({
