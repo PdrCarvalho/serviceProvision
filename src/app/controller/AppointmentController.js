@@ -47,7 +47,7 @@ class AppointmentController {
     }
 
     async FindAll(req, res){
-        const appoitments  = await Appoitment.find();
+    const appoitments  = await Appoitment.find({canceled_at: { $exists: false }});
         res.json(appoitments);
     }
     async Delete(req,res){
