@@ -1,5 +1,4 @@
 import express from 'express';
-// import path from 'path';
 import routes from './routes';
 import mongoose from 'mongoose';
 
@@ -20,7 +19,9 @@ class App {
   }
   mongo(){
     this.mongoConnection = mongoose.connect('mongodb://localhost:27017/serviceProvision',
-    { useNewUrlParser: true, useFindAndModify: true, useUnifiedTopology: true });
+    { useNewUrlParser: true, 
+      useFindAndModify: true, 
+      useUnifiedTopology: true });
   }
 }
 
