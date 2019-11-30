@@ -64,7 +64,7 @@ npm install
 ```console
 yarn dev 
 ```
-#### Inicializando a fila
+#### Inicializando o serviço de Email
 ```console
 yarn queue 
 ```
