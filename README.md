@@ -3,7 +3,7 @@
 API de prestação de serviços. Basicamente, a ideia é que um usuário consiga se cadastrar na plataforma, visualizar as empresas e os serviços que elas prestam e agendar um atendimento para a execução do serviço desejado com a empresa escolhida. Ademais, sempre que um novo agendamente for efetivado, a empresa da qual ele for direcionado, deve receber um e-mail com as informações do agendamento.
 
 # Aplicação
-Utilizamos NodeJS com express para criar a API baseada no padrão REST. O MongoDB foi o banco de dados escolhido para armazenar as informações de usuário, empresa e agendamento. O redis foi utilizado para armazenar a fila de empresas a serem notificadas, após o cadastro de um novo agendamento. Quando algo é inserido na fila, a aplicação é notificada e o processamento de email é inicializado.
+Para o desenvolvimento dessa solução utilizamos o NodeJS com express para criar a API baseada no padrão REST e os bancos de dados não relacionais MongoDB e Redis. Esse primeiro banco foi utilizado para o armazenamento de todas as informações cadastradas no sistema, como os usuários, empresas e os agendamentos. Escolhemos o MongoDB porque estudamos a ferramenta durante a disciplina e gostaríamos de colocar em prática os conhecimento adquiridos. Já o segundo foi utilizado pela biblioteca Bee-Queue para o gerenciamento do serviço de envio de e-mail, armazenando em fila os agendamentos cadastrados no sistema com as empresas que devem ser notificadas.
 
 
 # Modelos de Requisição
