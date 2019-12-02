@@ -1,3 +1,4 @@
+
 # Service Provision
 API de prestação de serviços. Basicamente, a ideia é que um usuário consiga se cadastrar na plataforma, visualizar as empresas e os serviços que elas prestam e agendar um atendimento para a execução do serviço desejado com a empresa escolhida. Ademais, sempre que um novo agendamente for efetivado, a empresa da qual ele for direcionado, deve receber um e-mail com as informações do agendamento.
 
