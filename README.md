@@ -12,7 +12,13 @@ Utilizamos NodeJS com express para criar a API baseada no padrão REST. O MongoD
 {
 	"name" : <nome do usuário> : string,
 	"email" : <email do usuário> : string,
-	"password" : <senha do usuário> : string
+	"password" : <senha do usuário> : string,
+	"address" : {
+		"street" : <nome da rua> : string,
+		"number" : <número do local> : string,
+		"city" : <nome da cidade> : string,
+		"state" : <nome do estado> : string
+	}
 }
 ```
 ### Company
@@ -22,7 +28,13 @@ Utilizamos NodeJS com express para criar a API baseada no padrão REST. O MongoD
 	"email" : <email da empresa> : string,
 	"password" : <senha da empresa> : string,
 	"service" : <serviço prestado pela empresa> string,
-	"description" : <descrição do serviço prestado> string
+	"description" : <descrição do serviço prestado> string,
+	"address" : {
+		"street" : <nome da rua> : string,
+		"number" : <número do local> : string,
+		"city" : <nome da cidade> : string,
+		"state" : <nome do estado> : string
+	}
 }
 ```
 
