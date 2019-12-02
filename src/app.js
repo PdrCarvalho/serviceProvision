@@ -1,7 +1,9 @@
 import express from 'express';
-// import path from 'path';
-import routes from './routes';
 import mongoose from 'mongoose';
+import indexRoute from './routes/index.routes';
+import userRoute from './routes/user.routes';
+import companyRoute from './routes/company.routes';
+import appointmentRoute from './routes/appointment.routes';
 
 class App {
   constructor() {
@@ -13,14 +15,21 @@ class App {
 
   middlewares() {
     this.server.use(express.json());
-     }
+  }
 
   routes() {
-    this.server.use(routes);
+    this.server.use('/', indexRoute);
+    this.server.use('/user', userRoute);
+    this.server.use('/company', companyRoute);
+    this.server.use('/appointment', appointmentRoute);
   }
-  mongo(){
-    this.mongoConnection = mongoose.connect('mongodb://localhost:27017/serviceProvision',
-    { useNewUrlParser: true, useFindAndModify: true, useUnifiedTopology: true });
+
+  mongo() {
+    this.mongoConnection = mongoose.connect('mongodb://localhost:27017/serviceProvision', { 
+      useNewUrlParser: true, 
+      useFindAndModify: true, 
+      useUnifiedTopology: true 
+    });
   }
 }
 
